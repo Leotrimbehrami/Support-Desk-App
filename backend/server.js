@@ -1,9 +1,14 @@
 import express from 'express'
+import colors from 'colors'
 import "dotenv/config";
 import { errorHandler } from './middleware/errorMiddleware.js';
 import { userRouter } from './routes/userRoutes.js';
-
+import { connectDB } from './config/db.js'
 const PORT = process.env.PORT || 4500
+
+// connect to database
+connectDB()
+
 const app = express()
 
 app.use(express.json())
