@@ -1,12 +1,23 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { FaSignInAlt } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../features/auth/authSlice";
 
-function Register() {
+function Login() {
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
+    password: '',
+    
   });
+  
+  const { email, password } = formData;
+
+   const dispatch = useDispatch();
+
+   const { user, isLoading, isSuccess, message } = useSelector(
+     (state) => state.auth
+   );
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -16,10 +27,15 @@ function Register() {
   };
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
+
+    const userData = {
+      email,
+      password,
+    }
+    dispatch(login(userData))
   };
 
-  const { name, email } = formData;
   return (
     <>
       <section className='heading'>
@@ -33,19 +49,6 @@ function Register() {
         <form onSubmit={onSubmit}>
           <div className='form-group'>
             <input
-              type='text'
-              className='form-control'
-              id='name'
-              name='name'
-              value={name}
-              onChange={onChange}
-              placeholder='Enter your name'
-              required
-            />
-          </div>
-
-          <div className='form-group'>
-            <input
               type='email'
               className='form-control'
               id='email'
@@ -56,7 +59,18 @@ function Register() {
               required
             />
           </div>
-
+          <div className='form-group'>
+            <input
+              type='password'
+              className='form-control'
+              id='password'
+              name='password'
+              value={password}
+              onChange={onChange}
+              placeholder='Enter password'
+              required
+            />
+          </div>
           <div className='form-group'>
             <button className='btn btn-block'>Submit</button>
           </div>
@@ -66,4 +80,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Login;
