@@ -4,6 +4,7 @@ import "dotenv/config";
 import { errorHandler } from './middleware/errorMiddleware.js';
 import { userRouter } from './routes/userRoutes.js';
 import { connectDB } from './config/db.js'
+import { ticketRouter } from './routes/ticketRoutes.js';
 const PORT = process.env.PORT || 4500
 
 // connect to database
@@ -20,6 +21,7 @@ app.get('/', (req,res) => {
 
 // Routes
 app.use('/api/users', userRouter)
+app.use("/api/tickets", ticketRouter);
 
 app.use(errorHandler)
 
