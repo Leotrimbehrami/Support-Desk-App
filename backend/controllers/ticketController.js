@@ -51,7 +51,7 @@ export const getTicket = asyncHandler(async (req, res) => {
   res.status(200).json(ticket)
 })
 
-// @desc    Create ne ticket
+// @desc    Create new ticket
 // @ route  POST /api/tickets
 // @access  Private
 export const createTicket = asyncHandler(async (req, res) => {
