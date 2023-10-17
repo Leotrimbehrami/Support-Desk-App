@@ -3,17 +3,17 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 
 function NewTicket() {
   const { user } = useSelector((state) => state.auth);
-  const [name, ] = useState(user.name);
+  const [name] = useState(user.name);
   const [email] = useState(user.email);
   const [product, setProduct] = useState("");
   const [description, setDescription] = useState("");
 
   const onSubmit = (e) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+  };
   return (
     <>
-      <section className="heading">
+      <section className='heading'>
         <h1>New Ticket</h1>
         <p>Please fill out the form below</p>
       </section>
@@ -47,13 +47,11 @@ function NewTicket() {
             <textarea
               name='description'
               id='description'
-              value={description} onChange={(e) => setDescription(e.target.value)}
-              ></textarea>
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}></textarea>
           </div>
-          <div className="form-group">
-            <button className="btn btn-block">
-              Submit
-            </button>
+          <div className='form-group'>
+            <button className='btn btn-block'>Submit</button>
           </div>
         </form>
       </section>
