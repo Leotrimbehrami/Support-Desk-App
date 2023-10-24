@@ -1,13 +1,13 @@
-import { createSlice, createAsyncThunk} from '@reduxjs/toolkit'
-import noteService from './noteService'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import noteService from "./noteService";
 
-const initialState =  {
+const initialState = {
   notes: [],
   isError: false,
   isSuccess: false,
   isLoading: false,
-  message: ''
-}
+  message: "",
+};
 
 // Get ticket notes
 export const getNotes = createAsyncThunk(
@@ -30,10 +30,10 @@ export const getNotes = createAsyncThunk(
 );
 
 export const noteSlice = createSlice({
-  name: 'note',
+  name: "note",
   initialState,
   reducers: {
-    reset: (state) => initialState
+    reset: (state) => initialState,
   },
   extraReducers: (builder) => {
     builder
@@ -49,9 +49,9 @@ export const noteSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-      })
-  }
-})
+      });
+  },
+});
 
-export const {reset} = noteSlice.actions
-export default noteSlice.reducer
+export const { reset } = noteSlice.actions;
+export default noteSlice.reducer;
