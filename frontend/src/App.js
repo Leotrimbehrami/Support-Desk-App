@@ -4,12 +4,12 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header";
 import Home from "./pages/Home"; // Hier die richtige Importanweisung für Home
-import Login from './pages/Login'
+import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NewTicket from "./pages/NewTicket";
 import PrivateRoute from "./components/PrivateRoute";
 import Tickets from "./pages/Tickets";
-import  Ticket from './pages/Ticket'
+import Ticket from "./pages/Ticket";
 
 function App() {
   return (
