@@ -1,8 +1,8 @@
 import { fileURLToPath } from 'url';
 import path from 'path';
 import express from 'express';
+import { config as dotenvConfig } from "dotenv";
 import colors from 'colors';
-import "dotenv";
 import { errorHandler } from './middleware/errorMiddleware.js';
 import { userRouter } from './routes/userRoutes.js';
 import { connectDB } from './config/db.js';
@@ -11,7 +11,8 @@ import { ticketRouter } from './routes/ticketRoutes.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config();
+dotenvConfig();
+
 const PORT = process.env.PORT || 4500;
 
 // connect to database
