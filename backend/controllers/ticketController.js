@@ -1,6 +1,4 @@
 import asyncHandler from "express-async-handler";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 import { ticketModel } from "../models/ticketModel.js";
 import { userModel } from "../models/userModel.js";
 
