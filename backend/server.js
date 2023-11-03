@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url';
 import path from 'path';
 import express from 'express';
-import { config as dotenvConfig } from "dotenv";
+import dotenv from "dotenv";
 import colors from 'colors';
 import { errorHandler } from './middleware/errorMiddleware.js';
 import { userRouter } from './routes/userRoutes.js';
@@ -11,7 +11,7 @@ import { ticketRouter } from './routes/ticketRoutes.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenvConfig();
+dotenv.config();
 
 const PORT = process.env.PORT || 4500;
 
