@@ -1,6 +1,7 @@
 # Support-Desk-App
 
-[Support Desk App](https://support-desk-app-cvd2.onrender.com/)
+[Support Desk App](https://support-desk-app-cvd2.onrender.com/) (Open link in new Tab: 'Ctrl' / 'Cmd' + Click)
+
 
 ![App Screenshot](./frontend/src/img/Screenshot%20from%202023-11-19%2015-14-22.png)
 
